@@ -26,7 +26,7 @@ function renderOuterLabel(props: Record<string, unknown>) {
     <text
       x={x}
       y={y}
-      fill="hsl(var(--muted-foreground))"
+      fill="var(--muted-foreground)"
       textAnchor="middle"
       dominantBaseline="central"
       fontSize={12}
@@ -131,14 +131,16 @@ export function SeniorityDonut() {
                   </Pie>
                   <Tooltip
                     content={<CustomTooltip />}
-                    cursor={{ fill: "#8d8d8d12" }}
+                    cursor={{
+                      fill: "color-mix(in oklab, var(--muted-foreground) 12%, transparent)",
+                    }}
                   />
                 </PieChart>
               </ResponsiveContainer>
 
               {/* Center text */}
               <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center">
-                <span className="font-display text-2xl font-bold text-foreground tabular-nums">
+                <span className="font-numeric text-2xl font-bold text-foreground">
                   {total}
                 </span>
                 <span className="font-display text-[10px] tracking-wide-label text-muted-foreground uppercase">
@@ -158,7 +160,7 @@ export function SeniorityDonut() {
                   <span className="text-xs text-muted-foreground capitalize">
                     {entry.level}
                   </span>
-                  <span className="ml-auto font-display text-xs font-medium text-foreground tabular-nums">
+                  <span className="ml-auto font-numeric text-xs font-medium text-foreground">
                     {entry.count}
                   </span>
                 </div>

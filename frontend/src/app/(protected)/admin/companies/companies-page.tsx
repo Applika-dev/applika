@@ -140,7 +140,7 @@ export function CompaniesPage() {
 
       <Card className="overflow-hidden">
         <div className="flex flex-col justify-between gap-3 p-5 pb-3 sm:flex-row sm:items-center">
-          <span className="text-xs text-muted-foreground/60 tabular-nums">
+          <span className="font-numeric text-xs text-muted-foreground/60">
             {data?.total ?? 0} companies
           </span>
           <div className="relative">
@@ -241,7 +241,7 @@ export function CompaniesPage() {
                           {company.is_active ? "active" : "inactive"}
                         </Badge>
                       </td>
-                      <td className="px-3 py-3 text-right font-display text-foreground tabular-nums">
+                      <td className="px-3 py-3 text-right font-numeric text-foreground">
                         {company.applications_count}
                       </td>
                       <td className="hidden px-3 py-3 text-right text-xs text-muted-foreground lg:table-cell">
@@ -303,7 +303,7 @@ export function CompaniesPage() {
 
             {totalPages > 1 && (
               <div className="flex items-center justify-between border-t border-border/30 px-5 py-3">
-                <span className="text-xs text-muted-foreground tabular-nums">
+                <span className="font-numeric text-xs text-muted-foreground">
                   Page {page + 1} of {totalPages}
                 </span>
                 <div className="flex items-center gap-1">

@@ -35,9 +35,7 @@ export function StatCard({
           {label}
         </span>
       </div>
-      <p className="font-display text-2xl font-semibold tabular-nums">
-        {value}
-      </p>
+      <p className="font-numeric text-2xl font-semibold">{value}</p>
     </div>
   );
 }
@@ -73,7 +71,7 @@ export function CharCounter({ count, max }: { count: number; max: number }) {
   return (
     <span
       className={cn(
-        "text-xs tabular-nums",
+        "font-numeric text-xs",
         exceeded ? "font-medium text-destructive" : "text-muted-foreground",
       )}
     >

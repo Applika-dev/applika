@@ -86,7 +86,7 @@ const STATS: StatDef[] = [
     label: "Total Offers",
     icon: Trophy,
     accent: "text-primary",
-    glowColor: "hsl(168 70% 48% / 0.12)",
+    glowColor: "color-mix(in oklab, var(--primary) 12%, transparent)",
     getValue: (d) => {
       return d ? d.total_offers : 0;
     },
@@ -177,7 +177,7 @@ export function AdminStatCards() {
                 value={stat.getValue(data)}
                 decimals={stat.decimals ?? 0}
                 suffix={stat.suffix ?? ""}
-                className={`font-display text-2xl font-bold tracking-tight tabular-nums ${stat.accent}`}
+                className={`font-numeric text-2xl font-bold tracking-tight ${stat.accent}`}
               />
             )}
           </div>
